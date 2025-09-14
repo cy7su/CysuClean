@@ -1,0 +1,60 @@
+{
+  "build": {
+    "beforeDevCommand": "npm run dev",
+    "beforeBuildCommand": "npm run build",
+    "devPath": "http://localhost:1420",
+    "distDir": "../dist",
+    "withGlobalTauri": false
+  },
+  "package": {
+    "productName": "CysuClean",
+    "version": "1.0.0"
+  },
+  "tauri": {
+    "allowlist": {
+      "all": false,
+      "fs": {
+        "all": true,
+        "scope": ["$APPDATA", "$CACHE", "$TEMP", "$TMP", "$HOME"]
+      },
+      "path": {
+        "all": true
+      },
+      "window": {
+        "all": true,
+        "setSize": true,
+        "setResizable": true
+      }
+    },
+    "bundle": {
+      "active": true,
+      "targets": "all",
+      "identifier": "com.cleaner.app",
+      "icon": [
+        "icons/32x32.png",
+        "icons/128x128.png",
+        "icons/256x256.png",
+        "icons/512x512.png",
+        "icons/icon.ico"
+      ]
+    },
+    "security": {
+      "csp": null
+    },
+    "windows": [
+      {
+        "fullscreen": false,
+        "resizable": false,
+        "title": "CysuClean",
+        "width": 800,
+        "height": 170,
+        "minWidth": 800,
+        "minHeight": 170,
+        "maxWidth": 800,
+        "maxHeight": 170,
+        "decorations": false,
+        "titleBarStyle": "Overlay"
+      }
+    ]
+  }
+}
